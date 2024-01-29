@@ -1,1 +1,1 @@
-from .unet_model import UNet, CompSegNet
+from .unet_model import UNet, CompSegNet, CompSegNetGrader, CompSegNet_3net
