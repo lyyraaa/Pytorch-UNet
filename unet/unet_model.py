@@ -107,7 +107,7 @@ class CompSegNet(nn.Module):
         self.dropout(x)
         logits = self.outc(x)
         sig = self.sigmoid(logits)
-        pool = torch.sum(sig,dim=(2,3)).squeeze()
+        pool = torch.sum(sig,dim=(2,3)).squeeze(dim=1)
         pool_frac = torch.div(pool,tissue_px)
         trans_sig = self.trans_sigmoid(pool_frac)
         return trans_sig, sig
